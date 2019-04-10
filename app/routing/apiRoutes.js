@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
   port: 8889,
   user: "root",
   password: "root",
-  database: "friendfinder_DB"
+  database: "friendfinder_db"
 });
 //connect to mysql, otherwise throw error
 connection.connect(function(err) {
