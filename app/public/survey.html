@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FriendFinder</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+  </head>
+
+  <body id="body">
+    <div class="container">
+      <h1>Survey</h1>
+      <hr />
+
+      <h2>About You</h2>
+      <h4>Name</h4>
+      <input type="text" id="name" class="form-control" required />
+
+      <h4>Link to Photo Image</h4>
+      <input type="text" id="photo" class="form-control" required />
+
+      <hr />
+
+      <h3>Question 1</h3>
+      <h4>You love to travel</h4>
+      <select class="chosen-select" id="questionOne">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>Question 2</h3>
+      <h4>
+        You are scared to try new things
+      </h4>
+      <select class="chosen-select" id="questionTwo">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>
+        <strong>Question 3</strong>
+      </h3>
+      <h4>
+        It is easy for you to talk to new people
+      </h4>
+      <select class="chosen-select" id="questionThree">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>Question 4</h3>
+      <h4>You often find yourself thinking about the past</h4>
+      <select class="chosen-select" id="questionFour">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>Question 5</h3>
+      <h4>You find it hard to concentrate when your surroundings are messy</h4>
+      <select class="chosen-select" id="questionFive">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>Question 6</h3>
+      <h4>
+        You prefer the great outdoors over big cities
+      </h4>
+      <select class="chosen-select" id="questionSix">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>Question 7</h3>
+      <h4>
+        You would prefer one long conversation daily over multiple short
+        conversations through out the day
+      </h4>
+      <select class="chosen-select" id="questionSeven">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>Question 8</h3>
+      <h4>It is hard for you to focus on one thing for long periods of time</h4>
+      <select class="chosen-select" id="questionEight">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>Question 9</h3>
+      <h4>
+        You prefer being surrounded by people over spending time alone
+      </h4>
+      <select class="chosen-select" id="questionNine">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <h3>Question 10</h3>
+      <h4>
+        Other people's moods easily impact your own mood.
+      </h4>
+      <select class="chosen-select" id="questionTen">
+        <option value=""></option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-lg btn-block"
+        id="submit"
+      ></button>
+    </div>
+    <script type="text/javascript">
+      $("#submit").on("click", function(event) {
+        event.preventDefault();
+        var name = $("#name")
+          .val()
+          .trim();
+        var photo = $("#photo").val();
+        var questionOne = parseInt($("#questionOne").val());
+        var questionTwo = parseInt($("#questionTwo").val());
+        var questionThree = parseInt($("#questionThree").val());
+        var questionFour = parseInt($("#questionFour").val());
+        var questionFive = parseInt($("#questionFive").val());
+        var questionSix = parseInt($("#questionSix").val());
+        var questionSeven = parseInt($("#questionSeven").val());
+        var questionEight = parseInt($("#questionEight").val());
+        var questionNine = parseInt($("#questionNine").val());
+        var questionTen = parseInt($("#questionTen").val());
+        var surveyResults = {
+          name: name,
+          photo: photo,
+          scores: [
+            questionOne,
+            questionTwo,
+            questionThree,
+            questionFour,
+            questionFive,
+            questionSix,
+            questionSeven,
+            questionEight,
+            questionNine,
+            questionTen
+          ]
+        };
+        console.log(surveyResults);
+        return surveyResults;
+      });
+    </script>
+  </body>
+</html>
